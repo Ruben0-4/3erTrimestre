@@ -67,7 +67,8 @@
 
                 $conexion = mysqli_connect($host, $usuario, $contraseña, $baseDatos);
                 $Existe = false;
-                $consulta = "SELECT Contraseña FROM Usuarios WHERE Nombre=?";
+                $consulta = "SELECT Contraseña FROM Usuarios WHERE Nombre=?"; 
+
                 $stmt = mysqli_prepare($conexion, $consulta); 
 
             mysqli_stmt_bind_param($stmt, "s", $user);
@@ -106,7 +107,7 @@
             $contraseña = "";
             $baseDatos = "Practica_2Trim";
 
-                $conexion = mysqli_connect($host, $usuario, $contraseña, $baseDatos);
+                $conexion = mysqli_connect($host, $usuario, $nombre, $baseDatos);
                 $consultaEliminar = "DELETE FROM Album WHERE ID=$id";
                 $stmt = mysqli_prepare($conexion, $consultaEliminar); 
  
@@ -144,7 +145,7 @@
             mysqli_close($conexion);
         }
 
-        public static function Actualiza($id, $Nombre, $contraseña) {
+        public static function Actualiza($id, $Nombre, $Autor) {
 
             $host = "localhost";
             $usuario = "root";
@@ -152,10 +153,10 @@
             $baseDatos = "Practica_2Trim";
             $conexion = mysqli_connect($host, $usuario, $contraseña, $baseDatos);
             
-                $update = "UPDATE Album SET Nombre=?, contraseña=? WHERE ID=?";
+                $update = "UPDATE Album SET Nombre=?, Autor=? WHERE ID=?";
                 $stmt = mysqli_prepare($conexion, $update);
 
-            mysqli_stmt_bind_param($stmt, "iss",$id, $Nombre, $contraseña);
+            mysqli_stmt_bind_param($stmt, "ssi",$Nombre, $Autor, $id);
             mysqli_stmt_execute($stmt);
             mysqli_stmt_close($stmt);
             mysqli_close($conexion);
