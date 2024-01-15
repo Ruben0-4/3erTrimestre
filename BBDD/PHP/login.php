@@ -97,3 +97,13 @@
 </body>
 
 </html>
+
+<!-- Pregunta 1: ¿Qué es PDO en BBDD? Comenta sus ventajas -->
+
+<!-- PDO "PHP Data Objects", es una extensión de PHP que proporciona una interfaz uniforme para acceder a bases de datos desde aplicaciones PHP. Como mencionaste, 
+PDO ofrece una capa de abstracción de acceso a datos, permitiendo a los desarrolladores interactuar con diversas bases de datos relacionales utilizando un conjunto 
+común de funciones, independientemente del motor de base de datos subyacente.
+
+Ventajas de PDO: PDO facilita la escritura de código que es independiente del sistema de gestión de bases de datos (DBMS). Puedes cambiar de un sistema de base de 
+datos a otro con relativa facilidad, ya que las funciones de acceso a datos permanecen consistentes, además PDO es compatible con varios sistemas de gestión de bases 
+de datos como MySQL, PostgreSQL, SQLite, SQL Server, y otros. Esto hace que sea una opción versátil para proyectos que pueden necesitar cambiar la base de datos subyacente. -->
